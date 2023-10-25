@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSignUp } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
  
@@ -65,7 +66,7 @@ export default function SignUpForm() {
     <main className="bg-gradient-to-tl from-indigo-600 via-black to-gray-900 h-screen">
         <div className="p-4">
         <Link href={"/"} >
-        <Button className="text-neutral-300">
+        <Button variant={"secondary"} className="">
         zurück
         </Button>
         </Link>
@@ -73,10 +74,10 @@ export default function SignUpForm() {
 
 
 <div className="mt-28 flex justify-center items-center">
-    <div className=" bg-neutral-900 h-[30rem] w-96 rounded-xl border border-neutral-700 bg-opacity-20 flex justify-center">
+    <div  className="bg-neutral-100 bg-opacity-5  backdrop-blur-5xl h-[30rem] w-96 rounded-xl border border-neutral-700  flex justify-center">
       {!pendingVerification && (
         <form className="flex flex-col text-lg mt-5 mx-10 ">
-            <span className="text-indigo-500 mb-5 font-bold text-4xl ">
+            <span className="text-indigo-500 mb-5 font-bold text-5xl ">
                 Saphir
             </span>
             <span className="text-neutral-300 text-md  ">
@@ -85,15 +86,15 @@ export default function SignUpForm() {
           
           <div className="flex flex-col mt-20">
             <label className="text-neutral-300">E-Mail-Adresse</label>
-            <input className="border rounded-md p-1 border-neutral-600 bg-neutral-800 outline-none  text-neutral-300 " placeholder="email" onChange={(e) => setEmailAddress(e.target.value)} id="email" name="email" type="email" />
+            <input className="border rounded-md p-1 border-neutral-500 bg-transparent outline-none  text-neutral-300 " placeholder="email" onChange={(e) => setEmailAddress(e.target.value)} id="email" name="email" type="email" />
           </div>
 
           <div className="flex flex-col mt-4">
           <label className="text-neutral-300">Passwort</label>
-            <input className="border rounded-md p-1 border-neutral-600 bg-neutral-800 outline-none text-neutral-300 " placeholder="password" onChange={(e) => setPassword(e.target.value)} id="password" name="password" type="password" />
+            <input className="border rounded-md p-1 border-neutral-500 bg-transparent outline-none text-neutral-300 " placeholder="password" onChange={(e) => setPassword(e.target.value)} id="password" name="password" type="password" />
           </div>
 
-          <button className="text-neutral-100 mt-10 bg-neutral-800 hover:bg-indigo-600 py-2   rounded-full " onClick={handleSubmit}>Account erstellen</button>
+          <button className="text-neutral-100 mt-10 bg-transparent border border-neutral-500 hover:bg-indigo-600 py-2   rounded-full " onClick={handleSubmit}>Account erstellen</button>
         </form>
       )}
       {pendingVerification && (
