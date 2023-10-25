@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from './ui/dropdown-menu'
 import { Cloud, CreditCard, Github, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from 'lucide-react'
 import Link from 'next/link'
+import { UserButton } from '@clerk/nextjs'
 
 function Navbar() {
   return (
@@ -12,7 +13,7 @@ function Navbar() {
     flex
     gap-5
     items-center
-    border-b
+    
     border-neutral-700'
     >
     
@@ -122,8 +123,7 @@ function Navbar() {
     
     <Button variant="outline" className="text-black ml-auto" >sichern</Button>
     <Avatar>
-      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-      <AvatarFallback>CN</AvatarFallback>
+    <UserButton afterSignOutUrl="/"/>
     </Avatar>
     </div>
   )

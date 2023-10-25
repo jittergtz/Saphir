@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-import './globals.css'
+import '../globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 
 const roboto = Roboto({
@@ -18,10 +18,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+  
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        {children}
+        </body>
     </html>
-    </ClerkProvider>
+   
   )
 }
