@@ -1,11 +1,17 @@
 "use client"
 import { useState } from "react";
-import { useSignUp } from "@clerk/nextjs";
+import { AuthenticateWithRedirectCallback, useSignIn, useSignUp } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { toast } from "@/components/ui/use-toast";
+import { error } from "console";
+import { BUILD_ID_FILE } from "next/dist/shared/lib/constants";
+
+import { FcGoogle } from "react-icons/fc"
+
  
 export default function SignUpForm() {
   const { isLoaded, signUp, setActive } = useSignUp();
@@ -20,6 +26,7 @@ export default function SignUpForm() {
     if (!isLoaded) {
       return;
     }
+   
  
     try {
       await signUp.create({
@@ -33,7 +40,12 @@ export default function SignUpForm() {
       // change the UI to our pending section.
       setPendingVerification(true);
     } catch (err: any) {
-      console.error(JSON.stringify(err, null, 2));
+        toast({
+            title: "Oh, hier ist ein Fehler ist Aufgetreten",
+            description:  err.errors[0].message ,
+            variant: "destructive",
+        })
+        console.error(err);
     }
   };
  
@@ -55,18 +67,46 @@ export default function SignUpForm() {
       }
       if (completeSignUp.status === "complete") {
         await setActive({ session: completeSignUp.createdSessionId })
-        router.push("/");
+        router.push("/dashboard");
       }
     } catch (err: any) {
-      console.error(JSON.stringify(err, null, 2));
+        toast({
+            title: "OH ein Fehler ist Aufgetreten",
+            description: err.errors[0].message,
+            variant: "destructive",
+        })
+        console.error(err);
     }
   };
+
+  const publicPages: Array<string> = [];
+ 
+  const SignInOAuthButtons = () => {
+    const { signIn, isLoaded } = useSignIn();
+    if (!isLoaded) {
+      return null;
+    }
+    const signInWithGoogle = () =>
+      signIn.authenticateWithRedirect({
+        strategy: 'oauth_google',
+        redirectUrl: '/sso-callback',
+        redirectUrlComplete: '/dashboard'
+      });
+      return <button className="flex mt-10  justify-center items-center gap-4 border rounded-lg p-1 border-neutral-400 text-neutral-300 " onClick={signInWithGoogle}>
+        Weiter mit Google
+        <FcGoogle/>
+        </button>;
+    };
+
+
+
+
  
   return (
     <main className="bg-gradient-to-tl from-indigo-600 via-black to-gray-900 h-screen">
         <div className="p-4">
         <Link href={"/"} >
-        <Button variant={"secondary"} className="">
+        <Button variant={"secondary"} className="bg-neutral-300 opacity-30">
         zurück
         </Button>
         </Link>
@@ -74,31 +114,42 @@ export default function SignUpForm() {
 
 
 <div className="mt-28 flex justify-center items-center">
-    <div  className="bg-neutral-100 bg-opacity-5  backdrop-blur-5xl h-[30rem] w-96 rounded-xl border border-neutral-700  flex justify-center">
+    
+    
+    <div  className="bg-gradient-to-b from-indigo-900 to-black bg-opacity-40  backdrop-blur-xl h-[30rem] w-96 rounded-xl border border-neutral-700  flex justify-center">
       {!pendingVerification && (
         <form className="flex flex-col text-lg mt-5 mx-10 ">
-            <span className="text-indigo-500 mb-5 font-bold text-5xl ">
+            <span className="text-neutral-300 underline mb-5 font-bold text-5xl ">
                 Saphir
             </span>
             <span className="text-neutral-300 text-md  ">
-                Registrieren. Erstelle einen neun Account
+                Registrieren, erstelle einen neuen Account und lern Saphir kennen
             </span>
+
+
+           
+            <SignInOAuthButtons/>
+           
+             
+              
+              
           
-          <div className="flex flex-col mt-20">
-            <label className="text-neutral-300">E-Mail-Adresse</label>
-            <input className="border rounded-md p-1 border-neutral-500 bg-transparent outline-none  text-neutral-300 " placeholder="email" onChange={(e) => setEmailAddress(e.target.value)} id="email" name="email" type="email" />
+          <div className="flex flex-col mt-4">
+            <label className="text-neutral-400">E-Mail-Adresse</label>
+            <input className="border rounded-md p-1 border-neutral-400 bg-transparent outline-none  text-neutral-300 " placeholder="Email" onChange={(e) => setEmailAddress(e.target.value)} id="email" name="email" type="email" />
           </div>
 
           <div className="flex flex-col mt-4">
-          <label className="text-neutral-300">Passwort</label>
-            <input className="border rounded-md p-1 border-neutral-500 bg-transparent outline-none text-neutral-300 " placeholder="password" onChange={(e) => setPassword(e.target.value)} id="password" name="password" type="password" />
+          <label className="text-neutral-400">Passwort</label>
+            <input className="border rounded-md p-1 border-neutral-400 bg-transparent outline-none text-neutral-300 " placeholder="Passwort" onChange={(e) => setPassword(e.target.value)} id="password" name="password" type="password" />
           </div>
 
-          <button className="text-neutral-100 mt-10 bg-transparent border border-neutral-500 hover:bg-indigo-600 py-2   rounded-full " onClick={handleSubmit}>Account erstellen</button>
+          <button className="text-neutral-100 mt-5 bg-transparent border border-neutral-500 py-2 hover:  rounded-full " onClick={handleSubmit}>Account erstellen</button>
+         
         </form>
       )}
       {pendingVerification && (
-        <div className="">
+        <div >
           <form className="grid mx-10 ">
             <label className="mt-10 text-neutral-300 text-center w-70 text-2xl font-bold">
                 Wir haben einen Verifizierungscode an 

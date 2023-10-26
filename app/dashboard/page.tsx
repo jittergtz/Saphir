@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <>
 <main className='text-neutral-200'>
-
-<div className=' bg-neutral-900 rounded-b-lg'>
+<div>
+<div className='bg-neutral-900 rounded-b-lg'>
   <Navbar/>
   </div>
 
@@ -25,10 +25,9 @@ export default function Home() {
     
      <Text/>
   </div>
+</div>
+</div>
 
-
-
-  </div>
 
 </main>
 
