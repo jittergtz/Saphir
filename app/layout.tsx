@@ -10,7 +10,7 @@ const roboto = Roboto({
 })
 export const metadata: Metadata = {
   title: 'Saphir take Notes',
-  description: 'Secure Privat notes',
+  description: 'Secure privat notes',
 }
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         {children}
-        <Toaster/>
+
       </body>
      
     </html>

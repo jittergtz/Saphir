@@ -7,10 +7,10 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
-import { error } from "console";
-import { BUILD_ID_FILE } from "next/dist/shared/lib/constants";
+
 
 import { FcGoogle } from "react-icons/fc"
+
 
  
 export default function SignUpForm() {
@@ -79,34 +79,35 @@ export default function SignUpForm() {
     }
   };
 
+
   const publicPages: Array<string> = [];
  
-  const SignInOAuthButtons = () => {
-    const { signIn, isLoaded } = useSignIn();
-    if (!isLoaded) {
-      return null;
-    }
-    const signInWithGoogle = () =>
-      signIn.authenticateWithRedirect({
-        strategy: 'oauth_google',
-        redirectUrl: '/sso-callback',
-        redirectUrlComplete: '/dashboard'
-      });
-      return <button className="flex mt-10  justify-center items-center gap-4 border rounded-lg p-1 border-neutral-400 text-neutral-300 " onClick={signInWithGoogle}>
-        Weiter mit Google
-        <FcGoogle/>
-        </button>;
-    };
+const SignInOAuthButtons = () => {
+  const { signIn, isLoaded } = useSignIn();
+  if (!isLoaded) {
+    return null;
+  }
+  const signInWithGoogle = () =>
+    signIn.authenticateWithRedirect({
+      strategy: 'oauth_google',
+      redirectUrl: '/sso-callback',
+      redirectUrlComplete: '/dashboard'
+    });
+  return <button className="flex mt-5 items-center justify-center gap-2 bg-transparent border p-1 border-neutral-400 text-neutral-200 rounded-lg " onClick={signInWithGoogle}>
+    Weiter mit Google 
+    <FcGoogle/>
+    </button>;
+};
 
 
 
 
  
   return (
-    <main className="bg-gradient-to-tl from-indigo-600 via-black to-gray-900 h-screen">
+    <main className="bg-gradient-to-t from-neutral-900 via-black to-black h-screen">
         <div className="p-4">
         <Link href={"/"} >
-        <Button variant={"secondary"} className="bg-neutral-300 opacity-30">
+        <Button variant={"secondary"} className="bg-neutral-400 text-neutral-300 bg-opacity-30">
         zurück
         </Button>
         </Link>
@@ -116,19 +117,20 @@ export default function SignUpForm() {
 <div className="mt-28 flex justify-center items-center">
     
     
-    <div  className="bg-gradient-to-b from-indigo-900 to-black bg-opacity-40  backdrop-blur-xl h-[30rem] w-96 rounded-xl border border-neutral-700  flex justify-center">
+    <div  className="bg-neutral-950 bg-opacity-90  backdrop-blur-xl h-[32rem] w-96 rounded-xl border border-neutral-700  flex justify-center">
       {!pendingVerification && (
-        <form className="flex flex-col text-lg mt-5 mx-10 ">
+        <form method="post" className="flex flex-col text-lg mt-5 mx-10 ">
             <span className="text-neutral-300 underline mb-5 font-bold text-5xl ">
                 Saphir
             </span>
             <span className="text-neutral-300 text-md  ">
-                Registrieren, erstelle einen neuen Account und lern Saphir kennen
+                Registrieren, erstelle einen neues Konto und lerne Spahir kennen.
             </span>
-
 
            
             <SignInOAuthButtons/>
+
+        
            
              
               
@@ -144,9 +146,15 @@ export default function SignUpForm() {
             <input className="border rounded-md p-1 border-neutral-400 bg-transparent outline-none text-neutral-300 " placeholder="Passwort" onChange={(e) => setPassword(e.target.value)} id="password" name="password" type="password" />
           </div>
 
-          <button className="text-neutral-100 mt-5 bg-transparent border border-neutral-500 py-2 hover:  rounded-full " onClick={handleSubmit}>Account erstellen</button>
+          <button className="text-neutral-100 mt-5 bg-transparent border border-neutral-500 py-2   rounded-full " onClick={handleSubmit}>Account erstellen</button>
          
+          <div className="text-center mt-4 text-sm underline text-neutral-500">
+               <Link href={"/sign-in"}>
+               Du hast bereits ein Konto?
+             </Link>
+        </div>
         </form>
+    
       )}
       {pendingVerification && (
         <div >
@@ -163,7 +171,7 @@ export default function SignUpForm() {
               onChange={(e) => setCode(e.target.value)}
             />
             <button
-            className="bg-neutral-200 mt-10 text-neutral-200 font-semibold p-2 px-10 rounded-xl"
+            className="bg-neutral-200 mt-10 text-black  p-2 px-10 rounded-xl"
              onClick={onPressVerify}>
               Verifizieren
             </button>
