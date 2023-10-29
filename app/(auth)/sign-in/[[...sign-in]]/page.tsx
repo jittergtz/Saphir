@@ -5,13 +5,19 @@ import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
- 
+import { toast } from "@/components/ui/use-toast";
+
+
+
 export default function SignInForm() {
   const { isLoaded, signIn, setActive } = useSignIn();
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
   // start the sign In process.
+
+
+
   const handleSubmit = async (e :any) => {
     e.preventDefault();
     if (!isLoaded) {
@@ -35,12 +41,19 @@ export default function SignInForm() {
       }
  
     } catch (err: any) {
-      console.error("error", err.errors[0].longMessage)
+      toast({
+        variant: "destructive",
+        title: "Oh hier ist etwas shcief gelaufen",
+        description: err.errors[0].message ,
+      })
     }
+    
   };
 
   const publicPages: Array<string> = [];
  
+
+
   const SignInOAuthButtons = () => {
     const { signIn, isLoaded } = useSignIn();
     if (!isLoaded) {
@@ -61,7 +74,7 @@ export default function SignInForm() {
  
   return (
 
-    <main className="bg-gradient-to-t from-neutral-900 via-black to-black h-screen">
+    <main className="bg-gradient-to-tl from-blue-600 via-black to-indigo-900 h-screen">
     <div className="p-4">
     <Link href={"/"} >
     <Button variant={"secondary"} className="bg-neutral-400 text-neutral-300 bg-opacity-30">
@@ -74,10 +87,10 @@ export default function SignInForm() {
 <div className="mt-28 flex justify-center items-center">
 
 
-<div  className="bg-neutral-950 bg-opacity-90  backdrop-blur-xl h-[32rem] w-96 rounded-xl border border-neutral-700  flex justify-center">
+<div  className="bg-neutral-950 bg-opacity-70   h-[32rem] w-96 rounded-xl border-2 border-neutral-700  flex justify-center">
 
     <form method="post" className="flex flex-col text-lg mt-5 w-72 mx-10 ">
-        <span className="text-neutral-300 underline mb-5 font-bold text-5xl ">
+        <span className="text-neutral-300  mb-5 font-bold text-5xl ">
             Saphir
         </span>
         <span className="text-neutral-300 text-md  ">
@@ -103,9 +116,9 @@ export default function SignInForm() {
         <input className="border rounded-md p-1 border-neutral-400 bg-transparent outline-none text-neutral-300 " placeholder="Passwort" onChange={(e) => setPassword(e.target.value)} id="password" name="password" type="password" />
       </div>
 
-      <button className="text-neutral-100 mt-5 bg-transparent border border-neutral-500 py-2   rounded-full " onClick={handleSubmit}>Anmelden</button>
+      <button className="text-neutral-900 mt-5 bg-white border border-neutral-500 py-2   rounded-full " onClick={handleSubmit}>Anmelden</button>
      
-      <div className="text-center mt-4 text-sm underline text-neutral-500">
+      <div className="text-center mt-4 text-sm underline text-neutral-400">
            <Link href={"/sign-up"}>
            Du hast noch kein Konto?
          </Link>

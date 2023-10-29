@@ -12,6 +12,7 @@ import { toast } from "@/components/ui/use-toast";
 import { FcGoogle } from "react-icons/fc"
 
 
+
  
 export default function SignUpForm() {
   const { isLoaded, signUp, setActive } = useSignUp();
@@ -71,7 +72,7 @@ export default function SignUpForm() {
       }
     } catch (err: any) {
         toast({
-            title: "OH ein Fehler ist Aufgetreten",
+            title: "OH, hier ist ein Fehler ist Aufgetreten",
             description: err.errors[0].message,
             variant: "destructive",
         })
@@ -104,7 +105,10 @@ const SignInOAuthButtons = () => {
 
  
   return (
-    <main className="bg-gradient-to-t from-neutral-900 via-black to-black h-screen">
+
+
+    <main className="bg-gradient-to-tl from-neutral-900 via-black to-indigo-600 h-screen">
+  
         <div className="p-4">
         <Link href={"/"} >
         <Button variant={"secondary"} className="bg-neutral-400 text-neutral-300 bg-opacity-30">
@@ -120,7 +124,7 @@ const SignInOAuthButtons = () => {
     <div  className="bg-neutral-950 bg-opacity-90  backdrop-blur-xl h-[32rem] w-96 rounded-xl border border-neutral-700  flex justify-center">
       {!pendingVerification && (
         <form method="post" className="flex flex-col text-lg mt-5 mx-10 ">
-            <span className="text-neutral-300 underline mb-5 font-bold text-5xl ">
+            <span className="text-neutral-300 mb-5 font-bold text-5xl ">
                 Saphir
             </span>
             <span className="text-neutral-300 text-md  ">
@@ -134,7 +138,7 @@ const SignInOAuthButtons = () => {
            
              
               
-              
+          
           
           <div className="flex flex-col mt-4">
             <label className="text-neutral-400">E-Mail-Adresse</label>

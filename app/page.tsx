@@ -2,10 +2,11 @@ import Navbar from '@/components/Navbar'
 import Text from '@/components/MainTextarea'
 import TypeAnimationLP from '@/components/ui/TypeAnimationLP'
 import { Button } from '@/components/ui/button'
-import { Pencil } from 'lucide-react'
+
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowBigRight, PencilLine } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
     
    <div className='flex justify-center'>
       <Link href='/dashboard' >
-      <Button variant={'secondary'} className='font-bold mt-10'>Loslegen <Pencil className='h-4' /> </Button>
+      <Button variant={'secondary'} className='font-bold mt-10'>Loslegen <PencilLine className='h-4' /> </Button>
       </Link>
 
    </div>

@@ -6,6 +6,7 @@ function Text() {
       <div className='flex justify-center'>
         <input className='
         pt-2
+        w-64
         flex
         text-center
         justify-center

@@ -4,6 +4,7 @@ import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Toaster } from '@/components/ui/toaster'
 
+
 const roboto = Roboto({
   weight: '400',
   subsets: ['latin'],
@@ -23,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         {children}
-
+      <Toaster/>
       </body>
      
     </html>
