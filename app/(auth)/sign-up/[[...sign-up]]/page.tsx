@@ -94,7 +94,7 @@ const SignInOAuthButtons = () => {
       redirectUrl: '/sso-callback',
       redirectUrlComplete: '/dashboard'
     });
-  return <button className="flex mt-5 items-center justify-center gap-2 bg-transparent border p-1 border-neutral-400 text-neutral-200 rounded-lg " onClick={signInWithGoogle}>
+  return <button className="flex mt-5 items-center justify-center gap-2 bg-transparent border p-1 border-neutral-100 text-neutral-100 rounded-lg " onClick={signInWithGoogle}>
     Weiter mit Google 
     <FcGoogle/>
     </button>;
@@ -107,7 +107,7 @@ const SignInOAuthButtons = () => {
   return (
 
 
-    <main className="bg-gradient-to-tl from-neutral-900 via-black to-indigo-600 h-screen">
+    <main className="bg-gradient-to-tl from-neutral-900 h-screen">
   
         <div className="p-4">
         <Link href={"/"} >
@@ -118,18 +118,20 @@ const SignInOAuthButtons = () => {
         </div>
 
 
-<div className="mt-28 flex justify-center items-center">
-    
-    
-    <div  className="bg-neutral-950 bg-opacity-90  backdrop-blur-xl h-[32rem] w-96 rounded-xl border border-neutral-700  flex justify-center">
-      {!pendingVerification && (
-        <form method="post" className="flex flex-col text-lg mt-5 mx-10 ">
-            <span className="text-neutral-300 mb-5 font-bold text-5xl ">
+<div className="mt-28 flex flex-col justify-center items-center">
+
+            <span className="text-neutral-100 mb-5  text-8xl ">
                 Saphir
             </span>
-            <span className="text-neutral-300 text-md  ">
+            <span className="text-neutral-100 w-72 text-center text-lg mb-10 ">
                 Registrieren, erstelle einen neues Konto und lerne Spahir kennen.
             </span>
+    
+    
+    <div  className=" backdrop-blur-xl h-[24rem] w-96 rounded-xl flex justify-center">
+      {!pendingVerification && (
+        <form method="post" className="flex flex-col text-lg w-72 mt-5 mx-10 ">
+   
 
            
             <SignInOAuthButtons/>
@@ -141,16 +143,16 @@ const SignInOAuthButtons = () => {
           
           
           <div className="flex flex-col mt-4">
-            <label className="text-neutral-400">E-Mail-Adresse</label>
-            <input className="border rounded-md p-1 border-neutral-400 bg-transparent outline-none  text-neutral-300 " placeholder="Email" onChange={(e) => setEmailAddress(e.target.value)} id="email" name="email" type="email" />
+            <label className="text-neutral-100">E-Mail-Adresse</label>
+            <input className="border rounded-md p-1 border-neutral-200 bg-transparent outline-none  text-neutral-100 " placeholder="Email" onChange={(e) => setEmailAddress(e.target.value)} id="email" name="email" type="email" />
           </div>
 
           <div className="flex flex-col mt-4">
-          <label className="text-neutral-400">Passwort</label>
-            <input className="border rounded-md p-1 border-neutral-400 bg-transparent outline-none text-neutral-300 " placeholder="Passwort" onChange={(e) => setPassword(e.target.value)} id="password" name="password" type="password" />
+          <label className="text-neutral-100">Passwort</label>
+            <input className="border rounded-md p-1 border-neutral-200 bg-transparent outline-none text-neutral-100 " placeholder="Passwort" onChange={(e) => setPassword(e.target.value)} id="password" name="password" type="password" />
           </div>
 
-          <button className="text-neutral-100 mt-5 bg-transparent border border-neutral-500 py-2   rounded-full " onClick={handleSubmit}>Account erstellen</button>
+          <button className="text-neutral-100 mt-5 bg-transparent border border-neutral-200 py-2   rounded-full " onClick={handleSubmit}>Account erstellen</button>
          
           <div className="text-center mt-4 text-sm underline text-neutral-500">
                <Link href={"/sign-in"}>

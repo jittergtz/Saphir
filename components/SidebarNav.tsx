@@ -18,12 +18,12 @@ function SidebarNav() {
 
     <div className='grid gap-5 mt-8'>
       
-      <button className='flex items-center gap-1 ' >
+      <button className='flex items-center gap-1 hover:text-white ' >
       <Search className='h-5' />
-        Suchen
+        Suchen 
         </button>
 
-        <span className='flex items-center border rounded-lg  border-neutral-400 h-14 gap-1' >
+        <span className='flex items-center border rounded-lg  border-neutral-500 hover:text-white  h-14 gap-1' >
         <StickyNote className='h-5 ml-2' />
         Neue Notiz
         </span>
