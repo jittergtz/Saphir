@@ -7,6 +7,6 @@ body{
 background-color: rgb(0, 0, 0);
 }
 
-.auth_card{
-backdrop-filter: blur(20px);
-}
+::selection {
+    background: rgb(77, 77, 77);
+  }

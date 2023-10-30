@@ -40,13 +40,13 @@ function SidebarNav() {
         <span className='ml-3 w-full h-7 overflow-hidden'>Javascript basics </span>
         </span>
         
-        <span className='bg-neutral-800 border border-neutral-500 h-14 rounded-lg flex items-center'>
+        <span className='bg-neutral-900 border border-neutral-500 h-14 rounded-lg flex items-center'>
         <BookType className='ml-2 h-6' />
         <span className='ml-3 w-full h-7 overflow-hidden'>Algorithmem und son kramm </span>
         </span>
 
             
-        <span className='bg-neutral-800 border border-neutral-500 h-14 rounded-lg flex items-center'>
+        <span className='bg-neutral-900 border border-neutral-500 h-14 rounded-lg flex items-center'>
         <BookType className='ml-2 h-6' />
         <span className='ml-3 w-full h-7 overflow-hidden'>Startup idea's</span>
         </span>

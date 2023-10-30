@@ -26,7 +26,7 @@ export default function Home() {
       
       <div className='
       w-full
-    bg-gradient-to-tl from-sky-500 to-neutral-900
+      bg-gradient-to-tl from-purple-700 to-neutral-900
       rounded-lg'>
         
         <Text/>
