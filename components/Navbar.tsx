@@ -8,7 +8,7 @@ import { UserButton } from '@clerk/nextjs'
 
 function Navbar() {
   return (
-    <div className='
+    <nav className='
     p-4
     flex
     gap-5
@@ -122,7 +122,7 @@ function Navbar() {
     <Avatar>
     <UserButton afterSignOutUrl="/"/>
     </Avatar>
-    </div>
+    </nav>
   )
 }
 

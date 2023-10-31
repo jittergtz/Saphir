@@ -4,10 +4,20 @@ import { Sidebar } from 'flowbite-react';
 import { HiArrowSmRight, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
 import { BookType, Search, StickyNote } from 'lucide-react';
 import { Separator } from './ui/separator';
+import { useState } from 'react'
+import { CommandMenu } from './CommandMenu'
+
 
 
 
 function SidebarNav() {
+
+  const commandMenu =  <CommandMenu open={true} setOpen={() => console.log("Open")}/>
+  
+  
+
+
+
   return (
 
   <main className='w-64 text-neutral-300 text-lg p-4'>
@@ -17,12 +27,16 @@ function SidebarNav() {
     <Separator className='bg-neutral-700' />
 
     <div className='grid gap-5 mt-8'>
-      
-      <button className='flex items-center gap-1 hover:text-white ' >
+     
+
+      <button
+      onClick={() => commandMenu.props.setOpen(true)}
+      className='flex items-center gap-1 hover:text-white ' >
       <Search className='h-5' />
         Suchen 
         </button>
 
+    
         <span className='flex items-center border rounded-lg  border-neutral-500 hover:text-white  h-14 gap-1' >
         <StickyNote className='h-5 ml-2' />
         Neue Notiz

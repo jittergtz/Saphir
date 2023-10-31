@@ -4,8 +4,9 @@ import Link from 'next/link'
 
 function LPNavbar() {
   return (
-    <main className='flex items-center p-4 w-full h-14 bg-neutral-950'>
-        <span className='text-neutral-200 text-3xl '>
+    <nav className='flex items-center p-4 w-full h-14 bg-neutral-950'>
+        <span className='text-3xl
+        bg-gradient-to-tr from-neutral-500 to-neutral-800  bg-clip-text text-transparent  '>
             Saphir
         </span>
 
@@ -15,7 +16,7 @@ function LPNavbar() {
         </Button>
         </Link>
 
-    </main>
+    </nav>
   )
 }
 

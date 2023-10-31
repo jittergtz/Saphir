@@ -13,8 +13,17 @@ import {
 } from "@/components/ui/command"
 import React from "react"
 
-export function CommandMenu() {
+
+
+
+export function CommandMenu(props: {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+}) {
   const [open, setOpen] = React.useState(false)
+
+
+
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
