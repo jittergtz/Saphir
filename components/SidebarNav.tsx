@@ -12,9 +12,15 @@ import { CommandMenu } from './CommandMenu'
 
 function SidebarNav() {
 
-  const commandMenu =  <CommandMenu open={true} setOpen={() => console.log("Open")}/>
-  
-  
+
+  const controlOpen = <CommandMenu open={true} setOpen={(open: boolean) => true} />
+  const [open, setOpen] = React.useState(false)
+
+  const handleClick = () => {
+
+    setOpen(true)
+    controlOpen.props.setOpen(true)
+  }
 
 
 
@@ -30,7 +36,7 @@ function SidebarNav() {
      
 
       <button
-      onClick={() => commandMenu.props.setOpen(true)}
+      onClick={handleClick}
       className='flex items-center gap-1 hover:text-white ' >
       <Search className='h-5' />
         Suchen 

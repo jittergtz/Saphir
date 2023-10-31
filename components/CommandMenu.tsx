@@ -14,12 +14,13 @@ import {
 import React from "react"
 
 
+type controlOpen = {
+open: boolean
+setOpen: (open: boolean) => void
 
+}
 
-export function CommandMenu(props: {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-}) {
+export function CommandMenu(props: controlOpen ) {
   const [open, setOpen] = React.useState(false)
 
 
@@ -45,6 +46,13 @@ export function CommandMenu(props: {
           <CommandItem>Calendar</CommandItem>
           <CommandItem>Search Emoji</CommandItem>
           <CommandItem>Calculator</CommandItem>
+          <CommandItem>Calculdffor</CommandItem>
+          <CommandItem>Calerelator</CommandItem>
+          <CommandItem>Calbbblator</CommandItem>
+          <CommandItem>Calculator</CommandItem>
+          <CommandItem>Cggegerglculator</CommandItem>
+          <CommandItem>ulator</CommandItem>
+
         </CommandGroup>
       </CommandList>
     </CommandDialog>

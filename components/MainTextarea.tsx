@@ -2,9 +2,10 @@ import React from 'react'
 
 function Text() {
   return (
-    <main>
+    <main  >
       <div className='flex justify-center'>
         <input className='
+      
         pt-2
         w-64
         flex
@@ -33,6 +34,7 @@ function Text() {
 
         <textarea placeholder='Schreibe etwas...' 
         className='
+     
         bg-transparent
         w-full 
         h-screen
