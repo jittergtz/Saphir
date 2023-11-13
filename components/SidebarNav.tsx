@@ -2,24 +2,60 @@
 import React from 'react'
 import { Sidebar } from 'flowbite-react';
 import { HiArrowSmRight, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
-import { BookType, Search, StickyNote } from 'lucide-react';
+import { BookType, FunctionSquare, Search, StickyNote } from 'lucide-react';
 import { Separator } from './ui/separator';
 import { useState } from 'react'
 import { CommandMenu } from './CommandMenu'
+import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from './ui/command';
 
 
 
 
 function SidebarNav() {
-
-
-  const controlOpen = <CommandMenu open={true} setOpen={(open: boolean) => true} />
   const [open, setOpen] = React.useState(false)
 
-  const handleClick = () => {
+ function handelClick(){
 
-    setOpen(true)
-    controlOpen.props.setOpen(true)
+
+    setOpen((open) => !open)
+  }
+
+  function CommandMenu() {
+    React.useEffect(() => {
+     const down = (e: KeyboardEvent) => {
+        if (e.key === "k" && (e.metaKey || e.ctrlKey)){
+          e.preventDefault()
+          setOpen((open) => !open)
+        }
+      }
+      document.addEventListener("keydown", down)
+      return () => document.removeEventListener("keydown", down)
+    }, [])
+  
+  
+      
+    
+  
+    return (
+      <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup heading="Suggestions">
+            <CommandItem>Calendar</CommandItem>
+            <CommandItem>Search Emoji</CommandItem>
+            <CommandItem>Calculator</CommandItem>
+            <CommandItem>Calculdffor</CommandItem>
+            <CommandItem>Calerelator</CommandItem>
+            <CommandItem>Calbbblator</CommandItem>
+            <CommandItem>Calculator</CommandItem>
+            <CommandItem>Cggegerglculator</CommandItem>
+            <CommandItem>ulator</CommandItem>
+  
+          </CommandGroup>
+        </CommandList>
+      </CommandDialog>
+    )
   }
 
 
@@ -36,11 +72,12 @@ function SidebarNav() {
      
 
       <button
-      onClick={handleClick}
+      onClick={handelClick}
       className='flex items-center gap-1 hover:text-white ' >
       <Search className='h-5' />
         Suchen 
         </button>
+     
 
     
         <span className='flex items-center border rounded-lg  border-neutral-500 hover:text-white  h-14 gap-1' >
@@ -73,7 +110,7 @@ function SidebarNav() {
 
 
     
-
+      <CommandMenu/>
     </div>
 
   </main>

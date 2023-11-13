@@ -14,28 +14,29 @@ import {
 import React from "react"
 
 
-type controlOpen = {
-open: boolean
-setOpen: (open: boolean) => void
 
-}
 
-export function CommandMenu(props: controlOpen ) {
+export function CommandMenu() {
   const [open, setOpen] = React.useState(false)
 
 
 
 
   React.useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+   const down = (e: KeyboardEvent) => {
+      if (e.key === "u" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
-        setOpen((open) => !open)
+     
       }
     }
     document.addEventListener("keydown", down)
     return () => document.removeEventListener("keydown", down)
   }, [])
+
+
+
+    
+  
 
   return (
     <CommandDialog open={open} onOpenChange={setOpen}>
