@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Text() {
+function NoteEditor() {
   return (
     <main  >
       <div className='flex justify-center'>
@@ -16,7 +16,7 @@ function Text() {
         rounded-lg
         border-neutral-700
         text-neutral-500'
-        placeholder='Notiz Titel hier...'
+        placeholder='Titel hier...'
         
         />
       </div>
@@ -47,4 +47,4 @@ function Text() {
   )
 }
 
-export default Text
+export default NoteEditor

@@ -3,6 +3,9 @@ import { Roboto } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Toaster } from '@/components/ui/toaster'
+import Provider from '@/components/Provider'
+import { CommandMenu } from '@/components/CommandMenu'
+
 
 
 const roboto = Roboto({
@@ -12,6 +15,11 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: 'Saphir take Notes',
   description: 'Secure privat notes',
+  icons: [
+    {
+      url: "./img/logo-metal.jpg"
+    }
+  ]
 }
 
 export default function RootLayout({
@@ -20,15 +28,24 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+
     <html lang="en">
       <body className={roboto.className}>
-        {children}
+      <ClerkProvider>
+        <Provider>
+          {children}
+          <CommandMenu/>
+        </Provider>
       <Toaster/>
+      </ClerkProvider>
+
+
       </body>
      
     </html>
 
-    </ClerkProvider>
+
+
+  
   )
 }

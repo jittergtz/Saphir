@@ -1,4 +1,4 @@
-Saphir is a simple aesthetic Note editor.
+Saphir is a aesthetic Note editor.
 
 
 

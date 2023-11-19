@@ -118,7 +118,7 @@ function Navbar() {
      <span className='font-bold'>Saphir</span>
      </Link>
     
-    <Button variant="outline" className="text-black ml-auto" >sichern</Button>
+    <Button variant="outline" className="text-black ml-auto" >Fokus</Button>
     <Avatar>
     <UserButton afterSignOutUrl="/"/>
     </Avatar>

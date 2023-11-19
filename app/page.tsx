@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar'
-import Text from '@/components/MainTextarea'
+import Text from '@/components/NoteEditor'
 import TypeAnimationLP from '@/components/ui/TypeAnimationLP'
 import { Button } from '@/components/ui/button'
 
