@@ -15,6 +15,7 @@ import Link from 'next/link';
 import { $notes } from "@/lib/db/schema";
 import { db } from "@/lib/db";
 import { eq } from "drizzle-orm";
+import SidebarFetchNotes from './SidebarFetchNotes';
 
 
 
@@ -41,7 +42,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
    createNote.mutate(undefined, {
     onSuccess:({note_id}) => {
       console.log("created Note")
-      router.push(`/notes/${note_id}`)
+      router.push(`/dashboard/notes/${note_id}`)
     },
     onError: (error) => {
       console.error("Mutation error:", error);
@@ -111,7 +112,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
       className='ml-auto mr-5'
       role='button'>
-      <ChevronsRight className=' text-neutral-500 hover:text-neutral-200'/> 
+      <ChevronsRight className=' text-neutral-500 hover:text-white'/> 
       </span>  
   
 
@@ -126,7 +127,9 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       className='flex items-center gap-1 hover:text-white ' >
 
       <Home className='h-5' />
+      <Link href={"/dashboard"}>
         Home
+      </Link>
 
        </button>
      
@@ -140,10 +143,10 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         </button>
      
 
-    <form onSubmit={handleSubmit} className='border rounded-lg  border-neutral-500'>
+    <form onSubmit={handleSubmit} className='border rounded-lg  hover:text-white border-neutral-500'>
         <button 
         type='submit'
-        className='flex items-center  hover:text-white h-14 gap-1' >
+        className='flex items-center  h-14 gap-1' >
         <StickyNote className='h-5  ml-2' />
         Neue Notiz
         
@@ -155,11 +158,14 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
         <span className='flex items-center gap-1' >
         Meine Notizen
+        
       </span>
+      
+    
+     
 
  
 
-       
 
             
     

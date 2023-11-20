@@ -10,3 +10,62 @@ background-color: rgb(0, 0, 0);
 ::selection {
     background: rgb(77, 77, 77);
   }
+
+
+.tiptap.ProseMirror {
+  outline: none;
+}
+
+.is-active {
+  background-color: rgb(93, 93, 93) ;
+  border-radius: 4px;
+}
+
+
+.tiptap-vuetify-editor__content {
+  max-height: 200px;
+}
+
+/* Basic editor styles */
+.tiptap {
+  > * + * {
+    margin-top: 0.75em;
+  }
+}
+
+/* Placeholder (at the top) */
+/*.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #ced4da;
+  pointer-events: none;
+  height: 0;
+}*/
+
+/* Placeholder (on every new line) */
+.tiptap .is-empty::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #818181;
+  pointer-events: none;
+  height: 0;
+}
+
+.prose {
+  --tw-prose-headings: #efefef;
+  --tw-prose-bold: #fff500;
+  --tw-prose-pre-bg: transparent;
+  --tw-prose: transparent;
+}
+
+
+/* hide scrollbar but allow scrolling */
+div {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
+}
+
+div::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
