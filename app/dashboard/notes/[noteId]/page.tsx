@@ -1,9 +1,12 @@
 
+import DeleteButton from '@/components/DeleteButton'
+import MoodButton from '@/components/MoodButton'
 import TipTapEditor from '@/components/TipTapEditor'
 import TipTapMenuBar from '@/components/TipTapMenuBar'
 import { Button } from '@/components/ui/button'
 import { db } from '@/lib/db'
 import { $notes } from '@/lib/db/schema'
+import { cn } from '@/lib/utils'
 import { auth } from '@clerk/nextjs'
 import { and, eq } from 'drizzle-orm'
 import { redirect } from 'next/navigation'
@@ -29,19 +32,19 @@ const NotePage = async ({params: {noteId}}: Props) => {
     }
     const note = notes[0]
     return ( 
-        <main className='  bg-gradient-to-tl from-purple-700 to-neutral-900 w-full   rounded-xl  ' >
-        <div className='flex justify-center '>
-         <div className='flex '>
-
-          </div>
+        <main className={cn(' w-full rounded-xl',
+        " bg-gradient-to-tl from-sky-500 to-neutral-900")}>
+       
+        <div className='flex justify-end '>
+       
+          <div className='m-2 flex'>
+          
+          <MoodButton />
+         
 
         
-            <Button
-            className='bg-neutral-800 m-2 ml-auto'
-             >
-                Löschen
-            </Button>
-     
+         <DeleteButton  noteId={note.id} />
+            </div>
         </div>
    
               

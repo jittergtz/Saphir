@@ -17,24 +17,27 @@ const SidebarFetchNotes = async (props: Props) => {
   
     return (
       <>
-      <div className='hidden md:flex '>
+      <div className='hidden md:flex bg-neutral-900 overflow-scroll h-80 border-t  border-neutral-700 mx-4 '>
           {notes.length === 0 && (
-            <div className="text-center">
-              <h2 className="text-xl  text-gray-300">Du hast noch keine Notizen</h2>
+            <div className="p-2">
+              <h2 className=" text-neutral-400 ">Du hast noch keine Notizen</h2>
             </div>
           )}
 
 
-          <div className="flex gap-4 w-full p-4 flex-col">
+          <div className="flex gap-4 w-full pt-4 flex-col">
    
             {notes.map((note) => {
               return (
                 <a href={`/dashboard/notes/${note.id}`} key={note.id}>
-                  <div className=" h-14 gap-1 text-neutral-300 hover:text-white border border-stone-500 rounded-lg  overflow-hidden flex items-center ">
-                     <Book className='h-5 ml-2' />
-                      <h3 className=" text-xl  font-semibold ">
-                        {note.id}
+                  <div className=" h-14 gap-1 text-neutral-300 hover:text-white border border-stone-500 rounded-lg  overflow-hidden flex flex-col ">
+               
+                      <h3 className=" text-xl ml-2 mt-1 w-48 overflow-hidden  font-semibold ">
+                        {note.title }
                       </h3>
+                      <h5 className='ml-2 text-sm mb-1 text-neutral-400'>
+                      {new Date(note.createdAt).toLocaleDateString()}
+                      </h5>
                  
               
                 

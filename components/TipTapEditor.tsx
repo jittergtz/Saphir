@@ -14,18 +14,24 @@ import Document from '@tiptap/extension-document'
 import Placeholder from '@tiptap/extension-placeholder'
 
 
+
 type Props = { note: NoteType };
 
 const TipTapEditor = ({ note }: Props) => {
   const [editorState, setEditorState] = React.useState(
     note.editorState || ""
   );
+  const [title, setTitle] = React.useState(
+    note.title
+  )
 
   const saveNote = useMutation({
     mutationFn: async () => {
       const response = await axios.post("/api/saveNote", {
         noteId: note.id,
         editorState,
+        title,
+  
       });
       return response.data;
     },
@@ -33,6 +39,7 @@ const TipTapEditor = ({ note }: Props) => {
 
   const CustomDocument = Document.extend({
     content: 'heading block*',
+    
    
   })
 
@@ -44,14 +51,15 @@ const TipTapEditor = ({ note }: Props) => {
         CustomDocument,
         StarterKit.configure({
           document: false,
+          
         }),
         Placeholder.configure({
           placeholder: ({ node }) => {
             if (node.type.name === 'heading') {
-              return 'Unbenannt'
-            }
-  
-            return 'Can you add some further context?'
+            
+             return 'Unbenannt'
+           } 
+            return 'weiteren Text hinzufügen'
           },
         }),
       ],
@@ -63,7 +71,9 @@ const TipTapEditor = ({ note }: Props) => {
 
     content: editorState,
     onUpdate: ({ editor }) => {
-    setEditorState(editor.getHTML()); },
+    setEditorState(editor.getHTML()); 
+    setTitle(editor.getHTML())
+  },
    
 });
 

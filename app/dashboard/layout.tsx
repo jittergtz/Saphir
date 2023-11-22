@@ -23,9 +23,9 @@ export default function RootLayout({
       <Navbar/>
       </div>
 
-    <div className='flex h-screen mt-3 gap-2'>
+    <div className='flex  mt-3 gap-2'>
       
- <nav className=' bg-neutral-900  rounded-lg '>
+ <nav className=' bg-neutral-900   rounded-lg '>
       <SidebarNav/>
       <SidebarFetchNotes/>
       </nav>
