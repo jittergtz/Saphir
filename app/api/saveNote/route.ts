@@ -6,23 +6,24 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    let { noteId, editorState } = body;
-    if (!editorState || !noteId) {
-      return new NextResponse("Missing editorState or noteId", { status: 400 });
+    let { noteId, editorState, title } = body; // Updated to receive 'title' from the request
+    if (!editorState || !noteId || !title) {
+      return new NextResponse("Missing editorState, noteId, or title", { status: 400 });
     }
 
     noteId = parseInt(noteId);
     const notes = await db.select().from($notes).where(eq($notes.id, noteId));
-    if (notes.length != 1) {
-      return new NextResponse("failed to update", { status: 500 });
+    if (notes.length !== 1) {
+      return new NextResponse("Failed to update", { status: 500 });
     }
 
     const note = notes[0];
-    if (note.editorState !== editorState) {
+    if (note.editorState !== editorState || note.title !== title) {
       await db
         .update($notes)
         .set({
           editorState,
+          title, // Update the 'title' field in the database
         })
         .where(eq($notes.id, noteId));
     }

@@ -71,8 +71,13 @@ const TipTapEditor = ({ note }: Props) => {
 
     content: editorState,
     onUpdate: ({ editor }) => {
-    setEditorState(editor.getHTML()); 
-    setTitle(editor.getHTML())
+      const editorContent = editor.getHTML(); // Annahme: editor.getHTML() gibt den gesamten HTML-Inhalt des Editors zurück
+      const firstLineBreakIndex = editorContent.indexOf('<p>'); // Finden des ersten Zeilenumbruchs im HTML-Inhalt
+      const newTitle = firstLineBreakIndex !== -1 ? editorContent.slice(0, firstLineBreakIndex) : editorContent; // Extrahieren der ersten Zeile als Titel
+  
+      setTitle(newTitle); // Aktualisieren des Titels im State
+  
+      setEditorState(editor.getHTML()); 
   },
    
 });

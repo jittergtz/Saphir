@@ -53,7 +53,8 @@ background-color: rgb(0, 0, 0);
 
 .prose {
   --tw-prose-headings: #efefef;
-  --tw-prose-bold: #a9a9a9;
+  --tw-prose-bold: rgb(222, 198, 12);
+
   --tw-prose-pre-bg: transparent;
   --tw-prose: transparent;
 }

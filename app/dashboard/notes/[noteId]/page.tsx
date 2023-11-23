@@ -33,7 +33,7 @@ const NotePage = async ({params: {noteId}}: Props) => {
     const note = notes[0]
     return ( 
         <main className={cn(' w-full rounded-xl',
-        " bg-gradient-to-tl from-sky-500 to-neutral-900")}>
+        "  bg-gradient-to-bl from-purple-700 to-neutral-900")}>
        
         <div className='flex justify-end '>
        

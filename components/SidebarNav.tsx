@@ -20,7 +20,7 @@ import SidebarFetchNotes from './SidebarFetchNotes';
 
 
 function SidebarNav() {
-  const pathname = usePathname()
+
   const [open, setOpen] = React.useState(false)
 
 
@@ -100,20 +100,17 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   return (
 
   <aside
-
-  className=
-  ' hidden w-64 md:flex flex-col text-neutral-300 text-lg p-4 '
+  className='hidden w-64 md:flex flex-col text-neutral-300 text-lg p-4 '
   >
 
 
     <div className='flex text-xl items-center border-neutral-700 mt-4 h-8'>
-   Übersicht
-      <span
-
+    Übersicht
+    <span
       className='ml-auto mr-5'
       role='button'>
       <ChevronsRight className=' text-neutral-500 hover:text-white'/> 
-      </span>  
+    </span>  
   
 
 
@@ -131,7 +128,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         Home
       </Link>
 
-       </button>
+   </button>
      
 
       <button

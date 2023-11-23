@@ -1,12 +1,17 @@
-
 import { db } from '@/lib/db';
 import { $notes } from '@/lib/db/schema';
 import { auth } from '@clerk/nextjs';
 import { eq } from 'drizzle-orm';
 import { Book } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react'
 
 type Props = {}
+
+
+function extractTextFromHTML(html: string): string {
+  return html.replace(/<[^>]*>/g, ''); // Entfernt alle HTML-Tags
+}
 
 const SidebarFetchNotes = async (props: Props) => {
     const { userId } = auth();
@@ -28,21 +33,22 @@ const SidebarFetchNotes = async (props: Props) => {
           <div className="flex gap-4 w-full pt-4 flex-col">
    
             {notes.map((note) => {
+              const pureTitle = extractTextFromHTML( note.title || "Unbenannt");
               return (
-                <a href={`/dashboard/notes/${note.id}`} key={note.id}>
+                <Link href={`/dashboard/notes/${note.id}`} key={note.id}>
                   <div className=" h-14 gap-1 text-neutral-300 hover:text-white border border-stone-500 rounded-lg  overflow-hidden flex flex-col ">
                
                       <h3 className=" text-xl ml-2 mt-1 w-48 overflow-hidden  font-semibold ">
-                        {note.title }
+                        {pureTitle }
                       </h3>
-                      <h5 className='ml-2 text-sm mb-1 text-neutral-400'>
+                      <h5 className='ml-2 text-sm  text-neutral-400'>
                       {new Date(note.createdAt).toLocaleDateString()}
                       </h5>
                  
               
                 
                   </div>
-                </a>
+                </Link>
               );
             })}
             </div>
@@ -54,3 +60,6 @@ const SidebarFetchNotes = async (props: Props) => {
 }
 
 export default SidebarFetchNotes
+
+
+

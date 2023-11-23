@@ -1,5 +1,5 @@
 import { Editor, useEditor } from '@tiptap/react';
-import { Bold, Highlighter, Italic, Pen, PenBox } from 'lucide-react';
+import { Bold, Highlighter, Italic, List, ListOrdered, Pen, PenBox } from 'lucide-react';
 import React from 'react'
 import Highlight from '@tiptap/extension-highlight'
 
@@ -23,6 +23,20 @@ const TipTapMenuBar = ({editor}: Props) => {
         className={editor.isActive('italic') ? 'is-active' : ''}>
          <Italic className='h-5 ' />
         </button>
+
+        <button
+        onClick={() => editor.chain().focus().toggleBulletList().run()}
+        className={editor.isActive('bulletList') ? 'is-active' : ''}
+      >
+      <List className='h-5'  />
+      </button>
+
+      <button
+        onClick={() => editor.chain().focus().toggleOrderedList().run()}
+        className={editor.isActive('orderedList') ? 'is-active' : ''}
+      >
+        <ListOrdered className='h-5'/>
+      </button>
 
 
      
