@@ -1,10 +1,14 @@
 import React from 'react'
 import { Button } from './ui/button'
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
+
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from './ui/dropdown-menu'
-import { Cloud, CreditCard, Github, HeartHandshake, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from 'lucide-react'
+import { CreditCard, HeartHandshake, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from 'lucide-react'
 import Link from 'next/link'
+import { Avatar } from './ui/avatar'
 import { UserButton } from '@clerk/nextjs'
+
+
+
 
 function Navbar() {
   return (
@@ -118,8 +122,8 @@ function Navbar() {
      <span className='font-bold'>Saphir</span>
      </Link>
     
-    <Button variant="outline" className="text-black ml-auto" >Fokus</Button>
-    <Avatar>
+
+    <Avatar className="text-black ml-auto">
     <UserButton afterSignOutUrl="/"/>
     </Avatar>
     </nav>

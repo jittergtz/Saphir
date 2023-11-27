@@ -47,12 +47,7 @@ export function CommandMenu() {
           <CommandItem>Calendar</CommandItem>
           <CommandItem>Search Emoji</CommandItem>
           <CommandItem>Calculator</CommandItem>
-          <CommandItem>Calculdffor</CommandItem>
-          <CommandItem>Calerelator</CommandItem>
-          <CommandItem>Calbbblator</CommandItem>
-          <CommandItem>Calculator</CommandItem>
-          <CommandItem>Cggegerglculator</CommandItem>
-          <CommandItem>ulator</CommandItem>
+  
 
         </CommandGroup>
       </CommandList>

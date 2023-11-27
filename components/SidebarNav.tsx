@@ -4,7 +4,7 @@ import { BookType, ChevronsLeft, ChevronsRight, Home, Search, StickyNote, UndoIc
 import { Separator } from './ui/separator';
 
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from './ui/command';
-import { useMediaQuery } from "usehooks-ts"
+
 import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useMutation } from '@tanstack/react-query';
@@ -12,10 +12,7 @@ import axios from "axios"
 
 import Link from 'next/link';
 
-import { $notes } from "@/lib/db/schema";
-import { db } from "@/lib/db";
-import { eq } from "drizzle-orm";
-import SidebarFetchNotes from './SidebarFetchNotes';
+
 
 
 
@@ -82,12 +79,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
             <CommandItem>Calendar</CommandItem>
             <CommandItem>Search Emoji</CommandItem>
             <CommandItem>Calculator</CommandItem>
-            <CommandItem>Calculdffor</CommandItem>
-            <CommandItem>Calerelator</CommandItem>
-            <CommandItem>Calbbblator</CommandItem>
-            <CommandItem>Calculator</CommandItem>
-            <CommandItem>Cggegerglculator</CommandItem>
-            <CommandItem>ulator</CommandItem>
+  
   
           </CommandGroup>
         </CommandList>

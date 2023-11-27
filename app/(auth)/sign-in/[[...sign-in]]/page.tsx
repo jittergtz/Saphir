@@ -50,26 +50,11 @@ export default function SignInForm() {
     
   };
 
-  const publicPages: Array<string> = [];
+
  
 
 
-  const SignInOAuthButtons = () => {
-    const { signIn, isLoaded } = useSignIn();
-    if (!isLoaded) {
-      return null;
-    }
-    const signInWithGoogle = () =>
-      signIn.authenticateWithRedirect({
-        strategy: 'oauth_google',
-        redirectUrl: '/sso-callback',
-        redirectUrlComplete: '/dashboard'
-      });
-    return <button className="flex mt-5 items-center justify-center gap-2 bg-transparent border p-1 border-neutral-100 text-neutral-100 rounded-lg " onClick={signInWithGoogle}>
-      Weiter mit Google 
-      <FcGoogle/>
-      </button>;
-  };
+
   
  
   return (
@@ -100,7 +85,7 @@ export default function SignInForm() {
  
 
        
-        <SignInOAuthButtons/>
+
 
     
        
