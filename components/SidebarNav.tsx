@@ -41,6 +41,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     onSuccess:({note_id}) => {
       console.log("created Note")
       router.push(`/dashboard/notes/${note_id}`)
+      router.refresh()
     
     },
     onError: (error) => {
