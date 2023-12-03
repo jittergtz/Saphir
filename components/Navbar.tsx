@@ -104,6 +104,8 @@ function Navbar() {
       </DropdownMenuContent>
     </DropdownMenu>
 
+   
+
 
 
 
@@ -119,13 +121,15 @@ function Navbar() {
 
 
      <Link href={"/"}>
-     <span className='font-bold'>Saphir</span>
+     <span>Saphir</span>
      </Link>
-    
-
-    <Avatar className="text-black ml-auto">
+     
+ <div className='ml-auto'>
     <UserButton afterSignOutUrl="/"/>
-    </Avatar>
+    </div>
+
+
+   
     </nav>
   )
 }

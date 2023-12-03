@@ -70,3 +70,19 @@ div {
 div::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
+
+
+.cl-internal-2tn0z0 {
+  box-sizing: inherit;
+  display: block;
+  flex-flow: column;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  flex: 1 1 0%;
+  padding: 2.375rem 2rem;
+  height: 100%;
+  overflow-y: auto;
+  /*fix the apperance from the Clerk Profile Manger form  */
+}

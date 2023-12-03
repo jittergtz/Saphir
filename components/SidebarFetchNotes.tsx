@@ -38,7 +38,7 @@ const SidebarFetchNotes = async (props: Props) => {
                 <Link href={`/dashboard/notes/${note.id}`} key={note.id}>
                   <div className=" h-14 gap-1 text-neutral-300 hover:text-white border border-stone-500 rounded-lg  overflow-hidden flex flex-col ">
                
-                      <h3 className=" text-xl ml-2 mt-1 w-48 overflow-hidden  font-semibold ">
+                      <h3 className=" text-xl ml-2 mt-1 w-48 overflow-hidden  ">
                         {pureTitle }
                       </h3>
                       <h5 className='ml-2 text-sm  text-neutral-400'>

@@ -1,6 +1,4 @@
 
-import {  currentUser } from '@clerk/nextjs/server'
-import { date } from 'drizzle-orm/mysql-core'
 import React from 'react'
 import DateHome from './ui/DateHome'
 
@@ -14,6 +12,7 @@ import { Button } from './ui/button'
 import { cn } from '@/lib/utils'
 import WelcomeMsg from './ui/WelcomeMsg'
 import HomeNewNoteButton from './ui/HomeNewNoteButton'
+
 
 
 // get current User Name for Welcome Message on the Dashbaord Home Card 
@@ -58,7 +57,7 @@ import HomeNewNoteButton from './ui/HomeNewNoteButton'
 
 
 
-
+     
       
 
     </main>

@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { ArrowBigRight, PencilLine } from 'lucide-react'
 import LPNavbar from '@/components/LPNavbar'
 
+
 export default function Home() {
   return (
     <>
@@ -28,6 +29,7 @@ export default function Home() {
       <div className='text-3xl mt-4 w-72 text-center h-28 text-neutral-600 mx-auto'>
     <TypeAnimationLP/>
 
+
     </div>
   
 
@@ -36,7 +38,7 @@ export default function Home() {
     
    <div className='flex justify-center'>
       <Link href='/dashboard' >
-      <Button variant={'secondary'} className='font-bold mt-10'>Loslegen <PencilLine className='h-4' /> </Button>
+      <Button variant={'secondary'} className=' mt-10'>Loslegen <PencilLine className='h-4' /> </Button>
       </Link>
 
    </div>

@@ -14,7 +14,7 @@ const roboto = Roboto({
 })
 export const metadata: Metadata = {
   title: 'Saphir take Notes',
-  description: 'Secure privat notes',
+  description: 'Fast Note Editor free',
   icons: [
     {
       url: "./img/logo-metal.jpg"
@@ -28,21 +28,30 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-
+    <ClerkProvider
+    appearance={{
+      variables: {
+        colorPrimary: "black",
+        colorText: "black"
+      }
+    }} >
     <html lang="en">
+     
       <body className={roboto.className}>
-      <ClerkProvider>
+  
         <Provider>
           {children}
           <CommandMenu/>
         </Provider>
       <Toaster/>
-      </ClerkProvider>
+
 
 
       </body>
+    
      
     </html>
+    </ClerkProvider>
 
 
 
