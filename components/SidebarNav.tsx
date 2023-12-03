@@ -19,12 +19,12 @@ import Link from 'next/link';
 function SidebarNav() {
 
   const [open, setOpen] = React.useState(false)
-
+  const router = useRouter()
 
   
 
 
-  const router = useRouter()
+
   const createNote = useMutation({
     mutationFn: async () => {
       const response = await axios.post("/api/createNote",)
@@ -35,18 +35,24 @@ function SidebarNav() {
 
 
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+ 
    e.preventDefault()
    createNote.mutate(undefined, {
     onSuccess:({note_id}) => {
       console.log("created Note")
       router.push(`/dashboard/notes/${note_id}`)
+    
     },
     onError: (error) => {
       console.error("Mutation error:", error);
       console.log("something went wrong");
     }
    })
+  
+
 }
+
+
 
 
 

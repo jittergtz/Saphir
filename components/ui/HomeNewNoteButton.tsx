@@ -28,6 +28,8 @@ function HomeNewNoteButton() {
         console.log("something went wrong");
       }
      })
+   
+   
   }
   return (
     <form onSubmit={handleSubmit}>

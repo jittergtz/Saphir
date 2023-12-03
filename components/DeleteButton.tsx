@@ -18,9 +18,12 @@ function DeleteButton({noteId}: Props) {
           const response = await  axios.post("/api/deleteNote", {
             noteId
           })
+          router.refresh()
           return response.data
+         
         }
 })
+
   return (
     <Button
     onClick={() => {
