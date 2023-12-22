@@ -79,10 +79,10 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   
     return (
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput placeholder="Suche eine Notiz" />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Suggestions">
+          <CommandEmpty>Kein Ergebniss gefunden.</CommandEmpty>
+          <CommandGroup heading="Vorschläge">
             <CommandItem>Calendar</CommandItem>
             <CommandItem>Search Emoji</CommandItem>
             <CommandItem>Calculator</CommandItem>

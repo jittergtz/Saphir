@@ -44,7 +44,7 @@ import HomeNewNoteButton from './ui/HomeNewNoteButton'
 
 
         <div className=' p-5 mt-20 rounded-lg  flex flex-col gap-10 justify-center items-center   '>
-            <h1 className='text-4xl w-80 text-center tracking-tighter text-neutral-300'>Fange an und Erstelle deine erste Notiz.</h1>
+            <h1 className='text-4xl w-80 text-center tracking-tighter text-neutral-300'>Fange an und Erstelle eine neue Notiz.</h1>
 
             <HomeNewNoteButton/>
 

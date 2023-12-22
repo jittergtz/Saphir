@@ -19,6 +19,23 @@ function MoodButton() {
   return (
 
     <>
+    <Select>
+        <SelectTrigger className="w-[180px]  ">
+        <SelectValue placeholder="standart" />
+        </SelectTrigger>
+        <SelectContent>
+        <SelectItem value="Forest">Forest</SelectItem>
+        <SelectItem value="Orange">Orange</SelectItem>
+        <SelectItem value="Sky">Sky</SelectItem>
+        <SelectItem value="Neon">Neon</SelectItem>
+        <SelectItem value="Light">Light house</SelectItem>
+        <SelectItem value="Stone">Stone</SelectItem>
+        <SelectItem value="Coffee">Coffee</SelectItem>
+        <SelectItem value="Galaxy">Galaxy</SelectItem>
+        <SelectItem value="Rich">Rich</SelectItem>
+       <SelectItem value="standart">standart</SelectItem>
+        </SelectContent>
+    </Select>
 
    
      

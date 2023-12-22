@@ -43,7 +43,7 @@ export default function SignInForm() {
     } catch (err: any) {
       toast({
         variant: "destructive",
-        title: "Oh hier ist etwas shcief gelaufen",
+        title: "OH, hier ist ein Fehler ist Aufgetreten",
         description: err.errors[0].message ,
       })
     }

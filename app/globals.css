@@ -5,6 +5,7 @@
 
 body{
 background-color: rgb(0, 0, 0);
+caret-color: rgb(137, 137, 137);
 }
 
 ::selection {
@@ -54,7 +55,6 @@ background-color: rgb(0, 0, 0);
 .prose {
   --tw-prose-headings: #efefef;
   --tw-prose-bold: rgb(222, 198, 12);
-
   --tw-prose-pre-bg: transparent;
   --tw-prose: transparent;
 }
@@ -86,3 +86,4 @@ div::-webkit-scrollbar {
   overflow-y: auto;
   /*fix the apperance from the Clerk Profile Manger form  */
 }
+
