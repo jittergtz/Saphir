@@ -1,3 +1,10 @@
+
+<img width="1440" alt="Spahir-lp" src="https://github.com/jittergtz/Saphir/assets/110451040/06bde2e0-fb35-4ba4-93a6-83d030f065ad">
+<img width="1427" alt="saphir-prev-2" src="https://github.com/jittergtz/Saphir/assets/110451040/40579d1c-94a9-482c-b27f-8bb21db4bbd3">
+
+
+
+
 Saphir is a aesthetic Note editor.
 
 
