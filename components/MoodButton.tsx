@@ -21,7 +21,7 @@ function MoodButton() {
     <>
     <Select>
         <SelectTrigger className="w-[180px]  ">
-        <SelectValue placeholder="standart" />
+        <SelectValue placeholder="Standart" />
         </SelectTrigger>
         <SelectContent>
         <SelectItem value="Forest">Forest</SelectItem>
@@ -33,7 +33,7 @@ function MoodButton() {
         <SelectItem value="Coffee">Coffee</SelectItem>
         <SelectItem value="Galaxy">Galaxy</SelectItem>
         <SelectItem value="Rich">Rich</SelectItem>
-       <SelectItem value="standart">standart</SelectItem>
+       <SelectItem value="standart">Standart</SelectItem>
         </SelectContent>
     </Select>
 

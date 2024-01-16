@@ -1,3 +1,4 @@
+import { SearchCommand } from '@/components/CommandMenu'
 import Navbar from '@/components/Navbar'
 import SidebarFetchNotes from '@/components/SidebarFetchNotes'
 import SidebarNav from '@/components/SidebarNav'
@@ -18,39 +19,26 @@ export default function RootLayout({
     <>
 
     <main className='text-neutral-200'>
-    <div>
+<div>
     <div className='bg-neutral-900 rounded-b-lg'>
       <Navbar/>
-      </div>
+   </div>
+   <SearchCommand />
 
-    <div className='flex  mt-3 gap-2'>
+
+<div className='flex  mt-3 gap-2'>
       
  <nav className=' bg-neutral-900   rounded-lg '>
       <SidebarNav/>
       <SidebarFetchNotes/>
-      </nav>
+  </nav>
 
-   
-  
 {/*Children is used to display the Dashboard home page */}
     {children}
     
-      
-    
 
-   
-
-
-
-
-    </div>
-  
-    </div>
-
-    
-
-  
-
+       </div>
+</div>
     </main>
 
 </>

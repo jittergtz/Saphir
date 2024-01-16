@@ -4,7 +4,8 @@ import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Toaster } from '@/components/ui/toaster'
 import Provider from '@/components/Provider'
-import { CommandMenu } from '@/components/CommandMenu'
+import { SearchCommand } from '@/components/CommandMenu'
+
 
 
 
@@ -41,7 +42,7 @@ export default function RootLayout({
   
         <Provider>
           {children}
-          <CommandMenu/>
+          <SearchCommand />
         </Provider>
       <Toaster/>
 

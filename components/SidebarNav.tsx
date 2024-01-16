@@ -1,5 +1,5 @@
 "use client"
-import React, { ElementRef, useId, useRef, useState } from 'react'
+import React, { ElementRef, use, useEffect, useId, useRef, useState } from 'react'
 import { BookType, ChevronsLeft, ChevronsRight, Home, Search, StickyNote, UndoIcon } from 'lucide-react';
 import { Separator } from './ui/separator';
 
@@ -11,6 +11,14 @@ import { useMutation } from '@tanstack/react-query';
 import axios from "axios"
 
 import Link from 'next/link';
+import { db } from '@/lib/db';
+import { $notes } from '@/lib/db/schema';
+import { eq } from 'drizzle-orm';
+import { auth } from '@clerk/nextjs';
+
+import { useSearch } from '@/hooks/use-search';
+import { SearchCommand } from './CommandMenu';
+
 
 
 
@@ -18,10 +26,7 @@ import Link from 'next/link';
 
 function SidebarNav() {
 
-  const [open, setOpen] = React.useState(false)
   const router = useRouter()
-
-  
 
 
 
@@ -48,19 +53,14 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       console.error("Mutation error:", error);
       console.log("something went wrong");
     }
-   })
+   })}
+
+
+
+
+ 
+  /*
   
-
-}
-
-
-
-
-
- function handelClick(){
- setOpen((open) => !open)
-  }
-
   function CommandMenu() {
     React.useEffect(() => {
      const down = (e: KeyboardEvent) => {
@@ -72,20 +72,40 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       document.addEventListener("keydown", down)
       return () => document.removeEventListener("keydown", down)
     }, [])
-  
-  
-      
+
     
-  
+    function extractTextFromHTML(arg0: any) {
+      throw new Error('Function not implemented.');
+    }
+
     return (
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Suche eine Notiz" />
         <CommandList>
           <CommandEmpty>Kein Ergebniss gefunden.</CommandEmpty>
           <CommandGroup heading="Vorschläge">
-            <CommandItem>Calendar</CommandItem>
-            <CommandItem>Search Emoji</CommandItem>
-            <CommandItem>Calculator</CommandItem>
+        
+      
+                <CommandItem>
+               hi
+                </CommandItem>
+         
+      
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+
+     
+          
+           
   
   
           </CommandGroup>
@@ -94,7 +114,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     )
   }
 
-
+*/
 
   return (
 
@@ -131,7 +151,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
      
 
       <button
-      onClick={handelClick}
+      onClick={() => {}}
       className='flex items-center gap-1 hover:text-white ' >
       <Search className='h-5' />
         Suchen
@@ -168,7 +188,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
 
     
-      <CommandMenu/>
+      <SearchCommand />
     </div>
 
   </aside>
