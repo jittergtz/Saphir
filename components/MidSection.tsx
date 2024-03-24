@@ -3,8 +3,6 @@ import React from "react"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { register } from "module"
-
 function MidSection() {
   gsap.registerPlugin(ScrollTrigger)
 

@@ -3,7 +3,6 @@ import { Roboto } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Toaster } from '@/components/ui/toaster'
-import { ProviderNextUI } from './Provider'
 import Provider from '@/components/Provider'
 
 
