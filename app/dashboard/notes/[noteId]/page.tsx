@@ -1,9 +1,5 @@
-import DeleteButton from '@/components/DeleteButton'
-import MoodButton from '@/components/MoodButton'
 import NotePages from '@/components/NotePage'
-import TipTapEditor from '@/components/TipTapEditor'
-import TipTapMenuBar from '@/components/TipTapMenuBar'
-import { Button } from '@/components/ui/button'
+
 import { db } from '@/lib/db'
 import { $notes } from '@/lib/db/schema'
 import { cn } from '@/lib/utils'
