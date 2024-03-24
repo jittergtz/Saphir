@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react"
 
 function NoteEditor() {
   return (
-    <main  >
-      <div className='flex justify-center'>
-        <input className='
+    <main>
+      <div className="flex justify-center">
+        <input
+          className="
       
         pt-2
         w-64
@@ -15,25 +16,22 @@ function NoteEditor() {
         outline-none
         rounded-lg
         border-neutral-700
-        text-neutral-500'
-        placeholder='Titel hier...'
-        
+        text-neutral-500"
+          placeholder="Title here..."
         />
       </div>
-            
-        
-        
-    <div className='
+
+      <div
+        className="
     mt-14
     p-4
     md:px-8
     xl:px-32
-    '>
-
-
-
-        <textarea placeholder='Schreibe etwas...' 
-        className='
+    "
+      >
+        <textarea
+          placeholder="write something..."
+          className="
      
         bg-transparent
         w-full 
@@ -41,8 +39,9 @@ function NoteEditor() {
         rounded-lg 
         outline-none
     
-        ' />
-    </div>
+        "
+        />
+      </div>
     </main>
   )
 }

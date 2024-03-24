@@ -3,9 +3,8 @@ import { Roboto } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Toaster } from '@/components/ui/toaster'
+import { ProviderNextUI } from './Provider'
 import Provider from '@/components/Provider'
-import { SearchCommand } from '@/components/CommandMenu'
-
 
 
 
@@ -36,22 +35,26 @@ export default function RootLayout({
         colorText: "black"
       }
     }} >
+         
     <html lang="en">
+   
      
       <body className={roboto.className}>
-  
+      
         <Provider>
           {children}
-          <SearchCommand />
-        </Provider>
+          </Provider>
+   
       <Toaster/>
 
 
 
       </body>
-    
+  
+     
      
     </html>
+ 
     </ClerkProvider>
 
 

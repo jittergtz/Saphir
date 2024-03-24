@@ -36,8 +36,9 @@ function HomeNewNoteButton() {
     <form onSubmit={handleSubmit}>
     <Button
     type='submit'
-     variant={"secondary"} >
-      Notiz Erstellen
+    className='"text-neutral-300 shadow p-2 w-40 rounded-lg 
+    border border-neutral-700 hover:bg-gradient-to-r from-neutral-400 to-neutral-700 hover:text-black transition'>
+      Create Note
     </Button>
  </form>
   )

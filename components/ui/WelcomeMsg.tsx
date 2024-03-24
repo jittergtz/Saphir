@@ -13,7 +13,7 @@ async function WelcomeMsg () {
       
         return (
          <h1 className="flex gap-3 items-center text-3xl text-neutral-300 ">
-          Willkommen, <br/> {user.firstName} 
+          Welcome, <br/> {user.firstName} 
         </h1>   
         )
       }

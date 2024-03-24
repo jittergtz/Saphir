@@ -34,6 +34,7 @@ const TipTapEditor = ({ note }: Props) => {
   
       });
       return response.data;
+     
     },
   });
 
@@ -57,9 +58,9 @@ const TipTapEditor = ({ note }: Props) => {
           placeholder: ({ node }) => {
             if (node.type.name === 'heading') {
             
-             return 'Unbenannt'
+             return 'Untitled'
            } 
-            return 'weiteren Text hinzufügen'
+            return 'write somtehing'
           },
         }),
       ],
@@ -83,7 +84,7 @@ const TipTapEditor = ({ note }: Props) => {
 });
 
 
-  const debouncedEditorState = useDebounce(editorState, 500);
+  const debouncedEditorState = useDebounce(editorState, 400);
   React.useEffect(() => {
     // save to db
     if (debouncedEditorState === "") return;

@@ -1,63 +1,37 @@
-import Navbar from '@/components/Navbar'
-import Text from '@/components/NoteEditor'
-import TypeAnimationLP from '@/components/ui/TypeAnimationLP'
-import { Button } from '@/components/ui/button'
+import Navbar from "@/components/Navbar"
+import Text from "@/components/NoteEditor"
+import TypeAnimationLP from "@/components/ui/TypeAnimationLP"
+import { Button } from "@/components/ui/button"
 
-
-
-import Link from 'next/link'
-import { ArrowBigRight, PencilLine } from 'lucide-react'
-import LPNavbar from '@/components/LPNavbar'
-
+import Link from "next/link"
+import { ArrowBigRight, PencilLine } from "lucide-react"
+import LPNavbar from "@/components/LPNavbar"
+import { Hero } from "@/components/ui/Hero"
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import MidSection from "@/components/MidSection"
 
 export default function Home() {
+
   return (
-    <>
+    <div>
+      <LPNavbar />
 
-    <LPNavbar/>
+      <Hero />
 
-
-  <main className='flex flex-col justify-center items-center h-screen bg-gradient-to-tl from-black via-neutral-950 to-zinc-800 '>
-    
-    <div className='text-6xl md:text-8xl  text-center sm:w-[47rem] px-4 text-neutral-200 '>
-      <h1>Saphir <span className='bg-gradient-to-t from-zinc-500 to-neutral-800  bg-clip-text text-transparent  '>Notizen</span> für <span className='bg-gradient-to-t from-zinc-500 to-neutral-800  bg-clip-text text-transparent '>alle, </span>
-        überall.
-
-     
-      </h1>
-     
-      <div className='text-3xl mt-4 w-72 text-center h-28 text-neutral-600 mx-auto'>
-    <TypeAnimationLP/>
+      <MidSection/>
 
 
+      <footer className="h-48 w-full p-5  mt-20 flex border-t border-neutral-700">
+        <div className="flex flex-col gap-3  lg:text-md text-neutral-300">
+          <p className="hover:text-neutral-400 transition-colors">Sandro Gantze</p>
+          <p className="hover:text-neutral-400 transition-colors">Github</p> 
+          <p className="hover:text-neutral-400 transition-colors">sandro.gantze@gmail.com</p> 
+
+        </div>
+
+      </footer>
     </div>
-  
-
-    </div>
-
-    
-   <div className='flex justify-center'>
-      <Link href='/dashboard' >
-      <Button variant={'secondary'} className=' mt-10'>Loslegen <PencilLine className='h-4' /> </Button>
-      </Link>
-
-   </div>
-  
- 
-</main>
-<footer className='flex justify-center  bg-black h-64 text-neutral-400'>
-  <div className='grid grid-cols-2 w-96  mt-20 px-5 text-center '>
-<span>Über </span>
-<span>Lizenz</span>
-<span>Datenschutz</span>
-
-<span>Impressum</span>
-<span>Saphir</span>
-<span>Github</span>
-
-  </div>
-</footer>
-
-</>
   )
 }

@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import { Button } from './ui/button'
 
 
@@ -15,25 +16,33 @@ import { cn } from '@/lib/utils'
 import { BackgroundColor, BackgroundSchema } from '@/lib/BackgroundColor'
 
 
+
 function MoodButton() {
+  const [isTheme, setIsTheme] = useState("")
+    
+  if(!isTheme){
+    return;
+  }
+
+ 
   return (
 
     <>
-    <Select>
-        <SelectTrigger className="w-[180px]  ">
-        <SelectValue placeholder="Standart" />
+    <Select >
+        <SelectTrigger className="w-[180px] outline-none  ">
+        <SelectValue placeholder="Mood" />
         </SelectTrigger>
         <SelectContent>
-        <SelectItem value="Forest">Forest</SelectItem>
-        <SelectItem value="Orange">Orange</SelectItem>
-        <SelectItem value="Sky">Sky</SelectItem>
-        <SelectItem value="Neon">Neon</SelectItem>
-        <SelectItem value="Light">Light house</SelectItem>
-        <SelectItem value="Stone">Stone</SelectItem>
-        <SelectItem value="Coffee">Coffee</SelectItem>
-        <SelectItem value="Galaxy">Galaxy</SelectItem>
-        <SelectItem value="Rich">Rich</SelectItem>
-       <SelectItem value="standart">Standart</SelectItem>
+        <SelectItem onClick={() => setIsTheme("forest")} value="Forest">Forest</SelectItem>
+        <SelectItem onClick={() => setIsTheme("orange")} value="Orange">Orange</SelectItem>
+        <SelectItem onClick={() => setIsTheme("sky")} value="Sky">Sky</SelectItem>
+        <SelectItem onClick={() => setIsTheme("neon")} value="Neon">Neon</SelectItem>
+        <SelectItem onClick={() => setIsTheme("lightHouse")} value="Light">Light house</SelectItem>
+        <SelectItem onClick={() => setIsTheme("stone")} value="Stone">Stone</SelectItem>
+        <SelectItem onClick={() => setIsTheme("coffee")} value="Coffee">Coffee</SelectItem>
+        <SelectItem onClick={() => setIsTheme("galaxy")} value="Galaxy">Galaxy</SelectItem>
+        <SelectItem onClick={() => setIsTheme("rich")} value="Rich">Rich</SelectItem>
+       <SelectItem onClick={() => setIsTheme("standart") }value="standart">Standart</SelectItem>
         </SelectContent>
     </Select>
 

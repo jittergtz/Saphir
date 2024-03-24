@@ -7,15 +7,19 @@ import Link from 'next/link'
 function LPNavbar() {
 
   return (
-    <nav className='flex items-center p-4 w-full h-14 bg-neutral-950'>
-        <span className='text-3xl
-        bg-gradient-to-tr from-neutral-500 to-neutral-800  bg-clip-text text-transparent  '>
+    <nav className='fixed top-0 flex z-50 items-center p-4 w-full h-14 bg-black/10 backdrop-blur-3xl 
+    border-b border-neutral-700'>
+    <span className='text-3xl bg-gradient-to-tr from-neutral-50 to-neutral-700 
+     bg-clip-text text-transparent  '>
             Saphir
         </span>
 
         <Link href={"/dashboard"} className='ml-auto'>
-        <Button variant={"secondary"}>
-            Anmelden
+        <Button 
+        className='shadow hover:scale-105 rounded-2xl
+        bg-gradient-to-l from-yellow-600 to-violet-900
+         transition'>
+          Login
         </Button>
         </Link>
 
