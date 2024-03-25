@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-body{
+.html{
 background-color: rgb(0, 0, 0);
 caret-color: rgb(137, 137, 137);
 }

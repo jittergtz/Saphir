@@ -35,10 +35,10 @@ export default function RootLayout({
       }
     }} >
          
-    <html lang="en">
+    <html className='html' lang="en" >
    
      
-      <body className={roboto.className}>
+      <body className={`${roboto.className} bg-black`}>
       
         <Provider>
           {children}
