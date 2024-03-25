@@ -38,7 +38,7 @@ function DeleteButton({noteId}: Props) {
     }}
     
     className='mr-1 bg-neutral-800 bg-opacity-50' >
-     Löschen
+     Delete
     </Button>
   )
 }

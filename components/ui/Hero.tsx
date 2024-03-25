@@ -60,7 +60,7 @@ export function Hero() {
       <img id="cor"
         className="w-80 md:w-[30rem] lg:w-[37rem] rounded-2xl
         border-2 border-neutral-800 shadow"
-        src={"/img/saphirtest.png"}
+        src={"/img/saphir-one.png"}
         alt="cover"
       />
     </div>

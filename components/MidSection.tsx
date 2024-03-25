@@ -33,25 +33,25 @@ function MidSection() {
           <img
             className="w-80 md:w-[30rem] lg:w-[37rem] rounded-2xl
     border-2 border-neutral-800 shadow"
-            src={"/img/saphirtest.png"}
+            src={"/img/saphir-1.png"}
             alt="cover"
           />
           <img
             className="w-80 md:w-[30rem] lg:w-[37rem] rounded-2xl
     border-2 border-neutral-800 shadow"
-            src={"/img/saphirtest.png"}
+            src={"/img/saphir-text3.png"}
             alt="cover"
           />
           <img
             className="w-80 md:w-[30rem] lg:w-[37rem] rounded-2xl
     border-2 border-neutral-800 shadow"
-            src={"/img/saphirtest.png"}
+            src={"/img/saphir-2.png"}
             alt="cover"
           />
           <img
             className="w-80 md:w-[30rem] lg:w-[37rem] rounded-2xl
     border-2 border-neutral-800 shadow"
-            src={"/img/saphirtest.png"}
+            src={"/img/saphir-dashboard.png"}
             alt="cover"
           />
         </div>
