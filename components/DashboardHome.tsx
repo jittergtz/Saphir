@@ -11,6 +11,7 @@ import { Button } from "./ui/button"
 import { cn } from "@/lib/utils"
 import WelcomeMsg from "./ui/WelcomeMsg"
 import HomeNewNoteButton from "./ui/HomeNewNoteButton"
+import SidebarFetchNotes from "./SidebarFetchNotes"
 
 // get current User Name for Welcome Message on the Dashbaord Home Card
 
@@ -39,7 +40,16 @@ function DashboardHome() {
         </h1>
 
         <HomeNewNoteButton />
+
+        <div className="flex flex-col md:hidden">
+          <h1 className="text-center text-neutral-400 "
+          >My Notes
+          </h1>
+      <SidebarFetchNotes/>
       </div>
+      </div>
+
+
     </main>
   )
 }

@@ -39,6 +39,7 @@ import { eq } from "drizzle-orm"
 import { auth } from "@clerk/nextjs"
 
 import { useSearch } from "@/hooks/use-search"
+import SidebarFetchNotes from "./SidebarFetchNotes"
 
 function SidebarNav() {
   const router = useRouter()

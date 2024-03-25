@@ -18,7 +18,7 @@ const SidebarFetchNotes = async (props: Props) => {
 
   return (
     <>
-      <div className="hidden md:flex 0 overflow-scroll h-80  mx-4 ">
+      <div className=" 0 overflow-scroll h-80  mx-4">
         {notes.length === 0 && (
           <div className="p-2">
             <h2 className=" text-neutral-400 ">Du hast noch keine Notizen</h2>
