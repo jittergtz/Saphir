@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
 import { StarterKit } from "@tiptap/starter-kit";
 import TipTapMenuBar from "./TipTapMenuBar";
@@ -26,6 +26,7 @@ const TipTapEditor = ({ note }: Props) => {
   )
 
   const saveNote = useMutation({
+    
     mutationFn: async () => {
       const response = await axios.post("/api/saveNote", {
         noteId: note.id,
@@ -37,6 +38,9 @@ const TipTapEditor = ({ note }: Props) => {
      
     },
   });
+
+
+
 
   const CustomDocument = Document.extend({
     content: 'heading block*',

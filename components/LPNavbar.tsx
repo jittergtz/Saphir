@@ -17,7 +17,7 @@ function LPNavbar() {
         <Link href={"/dashboard"} className='ml-auto'>
         <Button 
         className='shadow hover:scale-105 rounded-2xl
-        bg-gradient-to-l from-yellow-600 to-violet-900
+        bg-gradient-to-l from-blue-600 to-violet-900
          transition'>
           Login
         </Button>

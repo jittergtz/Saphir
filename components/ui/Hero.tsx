@@ -41,10 +41,7 @@ export function Hero() {
           the easy way.
         </h1>
         <p className="mt-4 text-base text-neutral-300 max-w-lg text-center mx-auto">
-          Spotlight effect is a great way to draw attention to a specific part
-          of the page. Here, we are drawing the attention towards the text
-          section of the page. I don&apos;t know why but I&apos;m running out of
-          copy.
+        Designed with aesthetics and functionality in mind. Streamline your note taking experience with our intuitive interface and focus on what matters most your ideas.
         </p>
         <div  className="flex   justify-center mt-5">
           <button 

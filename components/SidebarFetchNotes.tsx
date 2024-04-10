@@ -1,33 +1,47 @@
-import { db } from "@/lib/db"
-import { $notes } from "@/lib/db/schema"
-import { auth } from "@clerk/nextjs"
-import { eq } from "drizzle-orm"
-import { Book } from "lucide-react"
-import Link from "next/link"
-import React from "react"
+"use client"
+import { getUserNotes } from '@/app/api/getUserNotes';
+import { db } from '@/lib/db';
+import { $notes } from '@/lib/db/schema';
+import { auth } from '@clerk/nextjs';
+import { eq } from 'drizzle-orm';
+import { Book } from 'lucide-react';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react'
 
-type Props = {}
 
-function extractTextFromHTML(html: string): string {
-  return html.replace(/<[^>]*>/g, "") // Entfernt alle HTML-Tags
-}
 
-const SidebarFetchNotes = async (props: Props) => {
-  const { userId } = auth()
-  const notes = await db.select().from($notes).where(eq($notes.userId, userId!))
+type Note = {
+  id: string;
+  title: string;
+  createdAt: string;
+  // Add other fields as needed
+};
+
+const SidebarFetchNotes = () => {
+  const [notes, setNotes] = useState<any>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const userNotes = await getUserNotes();
+      setNotes(userNotes);
+    }
+    fetchData()
+  }, []);
+ 
+  
 
   return (
     <>
       <div className=" 0 overflow-scroll h-80  mx-4">
         {notes.length === 0 && (
           <div className="p-2">
-            <h2 className=" text-neutral-400 ">Du hast noch keine Notizen</h2>
+            <h2 className=" text-neutral-400 ">You dont have any notes yet</h2>
           </div>
         )}
 
         <div className="flex gap-4 w-full pt-4 flex-col">
           {notes.map((note) => {
-            const pureTitle = extractTextFromHTML(note.title || "Unbenannt")
+            const pureTitle = note.title.replace(/<[^>]*>/g, "");
             return (
               <Link href={`/dashboard/notes/${note.id}`} key={note.id}>
                 <div
@@ -42,12 +56,12 @@ const SidebarFetchNotes = async (props: Props) => {
                   </h5>
                 </div>
               </Link>
-            )
+            );
           })}
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SidebarFetchNotes
+export default SidebarFetchNotes;
